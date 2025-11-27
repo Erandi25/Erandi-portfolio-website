@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W. D. E. Hansini Gunasekara - Portfolio</title>
+    
+    <!-- Google Fonts for new typography - Playfair Display (Serif) and Poppins (Sans-serif) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 1. Custom Tailwind Configuration & Styles (MUST come BEFORE CDN script) --><script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            'primary-dark': '#0f172a', /* Deep Navy Blue */
+                            'accent-pink': '#FFC0CB', /* Lighter, more vibrant pink */
+                            'light-gray': '#f8f8f8',
+                            'hover-deep-pink': '#FF69B4', // Custom color for the specific hover request
+                        },
+                        fontFamily: {
+                            // New font families
+                            display: ['"Playfair Display"', 'serif'], // For large headlines
+                            sans: ['Poppins', 'sans-serif'], // For body text and general sans-serif
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 2. Load Tailwind CSS (This script reads the configuration defined above) --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Font Awesome for icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- 3. Corrected Custom Styles: Using @layer components in a STYLE block for JIT processing -->
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-link.active {
+            font-weight: 700;
+            color: #FFC0CB; /* Updated to new pink */
+        }
+        
+        /* * This block MUST use @layer components to allow the CDN/JIT engine 
+         * to process the @apply directives correctly, treating them as part of 
+         * the Tailwind layer.
+         */
+        @layer components {
+            .tag-style {
+                @apply text-xs font-medium bg-gray-200 text-gray-700 px-3 py-1 rounded-full whitespace-nowrap;
+            }
+            .tag-style-small {
+                @apply text-[10px] font-semibold bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full whitespace-nowrap;
+            }
+        }
+    </style>
+
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <!-- Header / Navigation --><header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo / Name --><a href="#home" class="text-xl font-bold text-gray-900 hover:text-accent-pink transition duration-300">
+                W. D. E. Hansini Gunasekara
+            </a>
+
+            <!-- Navigation Links --><nav class="space-x-4 flex items-center">
+                <a href="#projects" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300" data-section="projects">My work</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300" data-section="about">About</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300" data-section="contact">Contact</a>
+                <a href="#experience" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300 hidden md:inline" data-section="experience">Experience</a>
+                <!-- Resume Button - Google Drive Link --><a href="https://drive.google.com/file/d/1Mk3v2B6xU4OCizgkkl9YnBtIy5R28Uy6/view?usp=sharing" target="_blank" class="bg-gray-900 text-white px-4 py-2 rounded-lg font-medium shadow-md hover:bg-gray-700 transition duration-300">
+                    Resume
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <!-- 1. HOME / HERO SECTION --><section id="home" class="min-h-[95vh] flex items-center justify-center p-4 pt-12">
+            <div class="relative bg-primary-dark rounded-xl w-full max-w-7xl h-[700px] overflow-hidden shadow-2xl">
+                
+                <!-- Background Image (home.jpg) --><div class="absolute inset-0 z-0 opacity-90">
+                    <img src="./home.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1200x700/0f172a/FFC0CB?text=Abstract+Background';" alt="Abstract cube background" class="w-full h-full object-cover object-center">
+                </div>
+
+                <!-- Hero Content --><div class="relative z-10 p-8 md:p-16 max-w-3xl text-white">
+                    <p class="text-sm font-semibold tracking-widest uppercase text-accent-pink mb-4">DESIGNER & DEVELOPER</p>
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 font-display">
+                        Crafting thoughtful <span class="text-accent-pink">digital experiences</span> for complex problems.
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-10">
+                        I'm Hansini Gunasekara, a designer with a background in Health ICT. I bridge the gap between data-driven logic and human-centered design.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                        <!-- Button 1: View My Work (Pink Background, Dark Text) --><a href="#projects" class="nav-link bg-pink-300 text-gray-900 font-bold px-8 py-3 rounded-lg hover:bg-gray-200 transition duration-300 text-center">
+                            View My Work
+                        </a>
+                        <!-- Button 2: Contact Me (White Background, Dark Text) --><a href="#contact" class="nav-link bg-white text-gray-900 font-bold px-8 py-3 rounded-lg hover:bg-gray-200 transition duration-300 text-center">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME SECTION --><section id="about" class="min-h-screen pt-24 p-4 lg:p-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content Column --><div class="space-y-8">
+                    <h2 class="text-4xl font-bold mb-4 font-display">About me</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        I am an undergraduate in Health Information and Communication Technology with a strong interest in connecting technology and healthcare. I enjoy designing and developing user-friendly digital solutions using tools such as HTML, CSS, JavaScript, PHP, MySQL, Figma,Canva and Adobe tools. I am passionate about learning new technologies, solving real-world problems, and contributing to innovative digital health and IT projects.
+                    </p>
+
+                    <div class="mt-12 space-y-4">
+                        <h3 class="text-2xl font-semibold text-gray-900">Let's work together</h3>
+                        <p class="text-gray-600">I'm currently available for freelance projects and full-time opportunities.</p>
+                        
+                        <div class="flex items-center space-x-3 text-gray-800">
+                            <i class="fas fa-envelope text-accent-pink"></i>
+                            <a href="mailto:erandihansini4@gmail.com" class="hover:text-accent-pink transition">erandihansini4@gmail.com</a>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-800">
+                            <i class="fas fa-phone-alt text-accent-pink"></i>
+                            <span>070-5050269 / 071-7556689</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-800">
+                            <i class="fas fa-map-marker-alt text-accent-pink"></i>
+                            <span>Piliyandala, Sri Lanka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image Column (Using the uploaded my.jpg) --><div class="flex justify-center lg:justify-end relative p-8">
+                    <!-- Pink Background Shape --><div class="absolute w-4/5 h-full bg-accent-pink/30 rounded-[3rem] -rotate-3 -translate-y-4 right-0 hidden lg:block"></div>
+                    <!-- Image --><div class="w-full max-w-md bg-gray-200 aspect-square rounded-[2rem] shadow-xl overflow-hidden relative z-10">
+                        <img src="./my.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/F5F5F5/475569?text=Professional+Portrait';" 
+                             alt="W. D. E. Hansini Gunasekara Professional Portrait" 
+                             class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. EXPERIENCE / EXPERTISE SECTION --><section id="experience" class="min-h-screen bg-light-gray pt-24 pb-16 p-4 lg:p-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Left: Detail-Oriented Designer / Education --><div class="space-y-12">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-bold font-display">Detail-oriented designer with a foundation in Health Technology.</h2>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            I am a Health Information and Communication Technology undergraduate at Gampaha Wickramarachchi University. My journey began with a strong analytical foundation, which I have since channeled into a passion for UI/UX Design and Software Development. I am also deeply interested in applying digital solutions within the healthcare and hospital environment.
+                            <br> <br>
+                            I’m inspired by how technology can enhance hospital workflows, improve patient care, and strengthen overall healthcare delivery.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            I believe great design is more than aesthetics-it’s about solving real-world problems with clarity and purpose. Whether I’m designing a blood donation management system, a healthcare dashboard, or even a fashion e-commerce platform, I bring a unique blend of technical logic, healthcare insight, and creative problem-solving to every project.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed italic">
+                            Currently, I'm exploring deep learning approaches for automated identification and severity grading of diabetic retinopathy as part of my final year research.
+                        </p>
+                        <!--  is requested to be added in the previous turn. -->
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-semibold text-gray-900 border-b pb-2 border-gray-300">Education</h3>
+                        <div class="ml-4 space-y-2">
+                            <p class="font-medium">BHsc (Hons.) in Health ICT</p>
+                            <p class="text-sm text-gray-600">Gampaha Wickramarachchi University | 2021- Present</p>
+                        </div>
+                        <div class="ml-4 space-y-2 pt-4">
+                            <p class="font-medium">Engineering Drafting Certification</p>
+                            <p class="text-sm text-gray-600">Technical College Rathmalana | 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Experience Highlights / Technical Expertise --><div class="space-y-12">
+                    <!-- Experience Highlights --><div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-3xl font-bold mb-6 text-gray-900 font-display">Experience Highlights</h3>
+                        
+                        <div class="space-y-6 border-l-4 border-accent-pink pl-4">
+                            <!-- Entry 1 --><div>
+                                <h4 class="text-xl font-semibold">Database Administrator Intern</h4>
+                                <p class="text-sm text-gray-600 mb-2">MYPHARMA HEALTHCARE | 2024</p>
+                                <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+                                    <li>Managed database security, integrity, and backup procedures.</li>
+                                    <li>Created web content and maintained backend systems.</li>
+                                    <!-- [Content redacted for brevity] -->
+                                </ul>
+                            </div>
+                            <!-- Entry 2 --><div class="pt-4">
+                                <h4 class="text-xl font-semibold">Database Administrator Intern</h4>
+                                <p class="text-sm text-gray-600 mb-2">NEKFA Australia | 2023</p>
+                                <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+                                    <li>Oversaw data archiving, retrieval processes, and access permissions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Expertise --><div class="p-8 rounded-xl bg-white shadow-lg border border-gray-200">
+                        <h3 class="text-3xl font-bold mb-6 text-gray-900 font-display">Technical Expertise</h3>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-6">
+                            <!-- Category 1: Design --><div>
+                                <p class="font-medium text-gray-700 mb-2"><b>Design</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">Figma</span>
+                                    <span class="tag-style">Adobe Photoshop</span>
+                                    <span class="tag-style">Adobe Illustrator</span> <br>
+                                    <span class="tag-style">Canva</span>
+                                </div>
+                            </div>
+                            <!-- Category 2: Web Development Languages --><div>
+                                <p class="font-medium text-gray-700 mb-2"><b>Web Development Languages</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">HTML</span>
+                                    <span class="tag-style">CSS</span><br>
+                                    <span class="tag-style">JavaScript</span>
+                                </div>
+                            </div>
+                            <!-- Category 3: Tools & Others --><div>
+                                <p class="font-medium text-gray-700 mb-2"><b>Tools & Others</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">Git/GitHub</span>
+                                    <span class="tag-style" >AutoCAD</span>
+                                    <span class="tag-style">SketchUp</span>
+                                </div>
+                            </div>
+                            <!-- Category 4: Programming Languages --><div class="pt-4">
+                                <p class="font-medium text-gray-700 mb-2"><b>Programming Languages</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">C</span>
+                                    <span class="tag-style">C#</span>
+                                    <span class="tag-style">Java</span>
+                                    <span class="tag-style">Python</span>
+                                </div>
+                            </div>
+                            <!-- Category 5: Programming Paradigm --><div class="pt-4">
+                                <p class="font-medium text-gray-700 mb-2"><b>Programming Paradigm</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">OOP</span>
+                                </div>
+                            </div>
+                            <!-- Category 6: Data Analysis Tools --><div class="pt-4">
+                                <p class="font-medium text-gray-700 mb-2"><b>Data Analysis Tools / Platforms</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">Google Colab</span>
+                                </div>
+                            </div>
+                            <!-- Category 7: Web Development Framework --><div class="pt-4">
+                                <p class="font-medium text-gray-700 mb-2"><b>Web Development Framework</b></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag-style">ASP.NET</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resume Button - Google Drive Link --><div class="mt-8 flex justify-center lg:justify-end">
+                            <a href="https://drive.google.com/file/d/1Mk3v2B6xU4OCizgkkl9YnBtIy5R28Uy6/view?usp=sharing" target="_blank" class="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium shadow-md hover:bg-gray-700 transition duration-300">
+                                Download Full Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS SECTION (Projects.jpg content) --><section id="projects" class="min-h-screen pt-24 pb-16 p-4 lg:p-8">
+            <h2 class="text-4xl font-bold mb-4 font-display">Selected Work</h2>
+            <p class="text-lg text-gray-600 mb-12">A collection of projects exploring the intersection of healthcare, technology, and design.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project Card 1: Life Line Locator --><div class="group">
+                    <!-- Image Placeholder: Updated to use lll.png --><div class="h-64 bg-light-gray rounded-xl overflow-hidden shadow-lg mb-6 relative hover:shadow-xl transition duration-300">
+                        <img src="./lll.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFC0CB/1f2937?text=Web+App+Mockup';" alt="Life Line Locator Project Mockup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">WEB APPLICATION</span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-2 hover:text-accent-pink transition duration-300 font-display">Life Line Locator</h3>
+                    <p class="text-gray-600 mb-4">An online blood and organ donation system designed to bridge the gap between donors and patients in critical need ....</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">HTML</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">CSS</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">JavaScript</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">PHP</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">MYSQL</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">UI/UX</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Diabetic Retinopathy Research --><div class="group">
+                    <!-- Image Source corrected to use fyp.png --><div class="h-64 bg-primary-dark rounded-xl overflow-hidden shadow-lg mb-6 relative hover:shadow-xl transition duration-300">
+                        <img src="./fyp.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/374151/FFC0CB?text=AI+Dashboard+Interface';" alt="Diabetic Retinopathy Research Interface Mockup" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-accent-pink text-gray-900 text-xs font-semibold px-3 py-1 rounded-full">FINAL YEAR RESEARCH (ONGOING)</span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-2 hover:text-accent-pink transition duration-300 font-display">Automated Identification and Severity Grading of Diabetic Retinopathy through Deep Learning Approaches</h3>
+                    <p class="text-gray-600 mb-4">Deep learning approach for automated identification and severity grading of diabetic retinopathy. A data-driven ....</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">Deep Learning</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">Python</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">Medical Imaging</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Thread Co --><div class="group">
+                    <!-- Image Placeholder: Updated to use treadco.png --><div class="h-64 bg-light-gray rounded-xl overflow-hidden shadow-lg mb-6 relative hover:shadow-xl transition duration-300">
+                        <img src="./treadco.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/94a3b8/FFC0CB?text=E-Commerce+Website';" alt="Thread Co E-commerce Website Mockup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">E-COMMERCE</span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-2 hover:text-accent-pink transition duration-300 font-display">Thread Co</h3>
+                    <p class="text-gray-600 mb-4">A digital fashion store platform focusing on minimalist aesthetics and seamless user experience for modern retail.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">ASP.NET</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">MySQL</span>
+                        <span class="tag-style-small font-bold bg-accent-pink/20 text-gray-900">HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT FORM SECTION (Updated to include my.jpg) --><section id="contact" class="min-h-[70vh] pt-24 pb-16 p-4 lg:p-8">
+            <h2 class="text-4xl font-bold text-center mb-4 font-display">Let's Connect</h2>
+            <p class="text-lg text-gray-600 text-center mb-12">I’m currently available for freelance projects and new opportunities. Drop me a line!</p>
+
+            <div class="max-w-4xl mx-auto bg-light-gray rounded-xl shadow-2xl overflow-hidden border border-gray-100">
+                <div class="grid lg:grid-cols-2">
+                    
+                    <!-- Left Column: Image with Pink Accent -->
+                    <div class="relative min-h-[400px] bg-accent-pink/50 hidden lg:block">
+                        <img src="./my.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/500x600/FFC0CB/0f172a?text=Contact+Me';" 
+                             alt="W. D. E. Hansini Gunasekara Professional Portrait for Contact" 
+                             class="absolute inset-0 w-full h-full object-cover object-top opacity-90 transition duration-500 hover:opacity-100">
+                        <!-- Overlay for a subtle color effect --><div class="absolute inset-0 bg-primary-dark/10"></div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <h3 class="text-3xl font-display font-bold">Designer & Developer</h3>
+                            <p class="text-sm">Piliyandala, Sri Lanka</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact Form -->
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900 font-display">Send a Message</h3>
+                        <!-- Form action set to target the PHP script for processing -->
+                        <form action="submit_contact.php" method="POST" onsubmit="handleFormSubmit(event)">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-pink focus:border-accent-pink transition">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-pink focus:border-accent-pink transition">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-pink focus:border-accent-pink transition"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-accent-pink bg-pink-300 text-gray-900 font-bold px-4 py-3 rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
+                                Send Message
+                            </button>
+                            <!-- Message area for feedback from PHP script -->
+                            <p id="form-message" class="mt-4 text-center text-sm font-medium hidden"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer --><footer class="mt-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                
+                <!-- Left Side: Contact/Copyright --><div class="text-center md:text-left space-y-4">
+                    <div class="hidden lg:block">
+                        <h3 class="text-lg font-semibold mb-2">Let's work together</h3>
+                        <p class="text-gray-600 mb-4 text-sm">I'm currently available for freelance projects and full-time opportunities.</p>
+                        
+                        <div class="space-y-1 text-sm">
+                            <p class="text-gray-800"><i class="fas fa-envelope mr-2 text-accent-pink"></i> erandihansini4@gmail.com</p>
+                            <p class="text-gray-800"><i class="fas fa-phone-alt mr-2 text-accent-pink"></i> 070-5050269 / 071-7556689</p>
+                            <p class="text-gray-800"><i class="fas fa-map-marker-alt mr-2 text-accent-pink"></i> Piliyandala, Sri Lanka</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-6">&copy; 2025 Hansini Gunasekara. All rights reserved.</p>
+                </div>
+
+                <!-- Right Side: Social Media Links --><div class="flex items-center space-x-6">
+                    <a href="https://linkedin.com/in/erandi-gunasekara-561a5a262" target="_blank" class="text-gray-700 hover:text-gray-900 transition duration-300 text-2xl" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Erandi25" target="_blank" class="text-gray-700 hover:text-gray-900 transition duration-300 text-2xl" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- A placeholder for 'Experience Highlights' button from the Figma layout, linking to the experience section --><a href="#experience" class="nav-link bg-gray-900 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:bg-gray-700 transition duration-300 hidden md:block" data-section="experience">
+                        Experience Highlights.....
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling, navigation highlighting, and form submission --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            const formMessage = document.getElementById('form-message');
+
+            /**
+             * Handles smooth scrolling for navigation links
+             */
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            /**
+             * Highlights the active navigation link based on scroll position
+             */
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // Section is considered active when 30% of it is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                let activeSectionId = '';
+                
+                // Determine the currently visible section
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Prioritize sections that are intersecting
+                        activeSectionId = entry.target.id;
+                    }
+                });
+
+                // Fallback: If no section is intersecting, check scroll position
+                if (!activeSectionId) {
+                    // This logic is mostly for the initial load or fast scrolling, 
+                    // where intersection events might lag.
+                    const viewportTop = window.scrollY + window.innerHeight * 0.3;
+                    sections.forEach(section => {
+                        if (section.offsetTop <= viewportTop) {
+                            activeSectionId = section.id;
+                        }
+                    });
+                }
+                
+                // Update active class on navigation links
+                navLinks.forEach(link => {
+                    link.classList.remove('active', 'font-bold', 'text-accent-pink');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === '#' + activeSectionId) {
+                        link.classList.add('active', 'font-bold', 'text-accent-pink');
+                        link.classList.remove('text-gray-600');
+                    }
+                });
+
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            /**
+             * Handles form submission by sending data to the PHP script using fetch
+             */
+            window.handleFormSubmit = async function(event) {
+                event.preventDefault();
+                const form = event.target;
+                const formButton = form.querySelector('button[type="submit"]');
+                const formData = new FormData(form);
+                const name = formData.get('name');
+
+                formMessage.textContent = 'Sending message...';
+                formMessage.classList.remove('hidden', 'text-green-600', 'text-red-500');
+                formMessage.classList.add('text-gray-500');
+                formButton.disabled = true; // Disable button while loading
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        formMessage.textContent = result.message || `Thank you, ${name}! Your message has been sent successfully.`;
+                        formMessage.classList.remove('text-gray-500', 'text-red-500');
+                        formMessage.classList.add('text-green-600');
+                        form.reset(); // Clear the form on success
+                    } else {
+                        formMessage.textContent = result.message || 'Error: Could not send message. Please try again.';
+                        formMessage.classList.remove('text-gray-500', 'text-green-600');
+                        formMessage.classList.add('text-red-500');
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    formMessage.textContent = 'Network Error: Could not connect to the server.';
+                    formMessage.classList.remove('text-gray-500', 'text-green-600');
+                    formMessage.classList.add('text-red-500');
+                } finally {
+                    formButton.disabled = false; // Re-enable button
+                    // Hide message after a few seconds
+                    setTimeout(() => {
+                        formMessage.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
